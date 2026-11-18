@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: gateway-bff
+
+server:
+  port: 8080
+
+downstream:
+  base-url: http://localhost:8089
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,gateway
