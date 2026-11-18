@@ -1,0 +1,8 @@
+{
+  "request": { "method": "POST", "urlPathPattern": "/orders-service/v1/orders/?" },
+  "response": {
+    "status": 201,
+    "headers": { "Content-Type": "application/json" },
+    "body": "{\"id\":\"o-{{randomValue length=6 type='NUMERIC'}}\",\"status\":\"CREATED\",\"userId\":\"{{request.headers.X-User-Id}}\"}"
+  }
+}

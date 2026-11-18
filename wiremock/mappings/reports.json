@@ -1,0 +1,9 @@
+{
+  "request": { "method": "GET", "urlPathPattern": "/reports-service/v1/reports/.+" },
+  "response": {
+    "status": 200,
+    "headers": { "Content-Type": "application/json" },
+    "jsonBody": { "report": "sales", "total": 18240.55 },
+    "fixedDelayMilliseconds": 1500
+  }
+}

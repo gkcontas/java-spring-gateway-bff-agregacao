@@ -1,0 +1,8 @@
+{
+  "request": { "method": "GET", "urlPathPattern": "/catalog-service/v1/products/[0-9]+" },
+  "response": {
+    "status": 200,
+    "headers": { "Content-Type": "application/json" },
+    "body": "{\"id\":{{request.path.[3]}},\"name\":\"Product {{request.path.[3]}}\",\"price\":{{request.path.[3]}}.50}"
+  }
+}

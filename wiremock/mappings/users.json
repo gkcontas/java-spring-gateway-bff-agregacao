@@ -1,0 +1,8 @@
+{
+  "request": { "method": "GET", "urlPathPattern": "/users-service/v1/users/[^/]+" },
+  "response": {
+    "status": 200,
+    "headers": { "Content-Type": "application/json", "X-Internal-Debug": "db=replica-3" },
+    "body": "{\"id\":\"{{request.path.[3]}}\",\"name\":\"Ana Souza\",\"email\":\"ana@example.com\",\"tier\":\"gold\",\"seenUserId\":\"{{request.headers.X-User-Id}}\",\"seenRequestId\":\"{{request.headers.X-Request-Id}}\"}"
+  }
+}

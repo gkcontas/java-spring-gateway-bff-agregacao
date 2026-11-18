@@ -1,0 +1,79 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPath": "/catalog-service/v1/products",
+    "queryParameters": {
+      "ids": {
+        "matches": ".+"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": [
+      {
+        "id": 1,
+        "name": "Product 1",
+        "price": 1.5
+      },
+      {
+        "id": 2,
+        "name": "Product 2",
+        "price": 2.5
+      },
+      {
+        "id": 3,
+        "name": "Product 3",
+        "price": 3.5
+      },
+      {
+        "id": 4,
+        "name": "Product 4",
+        "price": 4.5
+      },
+      {
+        "id": 5,
+        "name": "Product 5",
+        "price": 5.5
+      },
+      {
+        "id": 6,
+        "name": "Product 6",
+        "price": 6.5
+      },
+      {
+        "id": 7,
+        "name": "Product 7",
+        "price": 7.5
+      },
+      {
+        "id": 8,
+        "name": "Product 8",
+        "price": 8.5
+      },
+      {
+        "id": 9,
+        "name": "Product 9",
+        "price": 9.5
+      },
+      {
+        "id": 10,
+        "name": "Product 10",
+        "price": 10.5
+      },
+      {
+        "id": 11,
+        "name": "Product 11",
+        "price": 11.5
+      },
+      {
+        "id": 12,
+        "name": "Product 12",
+        "price": 12.5
+      }
+    ]
+  }
+}

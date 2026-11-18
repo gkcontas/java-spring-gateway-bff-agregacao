@@ -1,0 +1,14 @@
+{
+  "request": { "method": "GET", "urlPath": "/orders-service/v1/orders" },
+  "response": {
+    "status": 200,
+    "headers": { "Content-Type": "application/json" },
+    "jsonBody": [
+      { "id": "o-1", "status": "DELIVERED", "total": 120.90, "items": [ {"productId": 1, "quantity": 1}, {"productId": 2, "quantity": 2}, {"productId": 3, "quantity": 1}, {"productId": 4, "quantity": 3} ] },
+      { "id": "o-2", "status": "DELIVERED", "total": 45.00,  "items": [ {"productId": 5, "quantity": 1}, {"productId": 6, "quantity": 1}, {"productId": 7, "quantity": 2}, {"productId": 8, "quantity": 1} ] },
+      { "id": "o-3", "status": "SHIPPED",   "total": 89.50,  "items": [ {"productId": 9, "quantity": 1}, {"productId": 10, "quantity": 1}, {"productId": 11, "quantity": 1}, {"productId": 12, "quantity": 1} ] },
+      { "id": "o-4", "status": "SHIPPED",   "total": 15.20,  "items": [ {"productId": 1, "quantity": 2}, {"productId": 3, "quantity": 1}, {"productId": 5, "quantity": 1}, {"productId": 7, "quantity": 1} ] },
+      { "id": "o-5", "status": "CREATED",   "total": 230.00, "items": [ {"productId": 2, "quantity": 1}, {"productId": 4, "quantity": 1}, {"productId": 6, "quantity": 4}, {"productId": 8, "quantity": 1} ] }
+    ]
+  }
+}
