@@ -32,6 +32,7 @@ dependencies {
     testAnnotationProcessor("org.projectlombok:lombok")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("io.projectreactor:reactor-test")
+    testImplementation("org.awaitility:awaitility")
     testImplementation("org.testcontainers:junit-jupiter")
     testImplementation("org.wiremock:wiremock-standalone:3.9.2")
 }

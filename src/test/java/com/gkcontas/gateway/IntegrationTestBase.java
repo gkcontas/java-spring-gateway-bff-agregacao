@@ -7,8 +7,11 @@ import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;
+import org.springframework.test.web.reactive.server.WebTestClient;
 import org.testcontainers.containers.GenericContainer;
 import org.testcontainers.containers.wait.strategy.Wait;
+
+import java.time.Duration;
 
 /**
  * One WireMock container for the whole suite, started from a static
@@ -41,6 +44,13 @@ public abstract class IntegrationTestBase {
     static void downstream(DynamicPropertyRegistry registry) {
         registry.add("downstream.base-url",
                 () -> "http://" + WIREMOCK.getHost() + ":" + WIREMOCK.getMappedPort(8080));
+    }
+
+    protected WebTestClient client() {
+        return WebTestClient.bindToServer()
+                .baseUrl("http://localhost:" + port)
+                .responseTimeout(Duration.ofSeconds(15))
+                .build();
     }
 
     @BeforeEach

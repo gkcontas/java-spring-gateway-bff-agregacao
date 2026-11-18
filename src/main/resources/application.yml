@@ -1,15 +1,50 @@
 spring:
   application:
     name: gateway-bff
+  cloud:
+    gateway:
+      server:
+        webflux:
+          httpclient:
+            connect-timeout: 500
+            # Default for every route; the reports route overrides it.
+            response-timeout: 1s
 
 server:
   port: 8080
 
 downstream:
   base-url: http://localhost:8089
+  connect-timeout: 500ms
+
+gateway:
+  auth:
+    # Development secret. Production reads GATEWAY_HMAC_SECRET.
+    hmac-secret: ${GATEWAY_HMAC_SECRET:dev-only-secret-change-me-0123456789abcdef}
+    issuer: https://auth.example.local
+    clock-skew: 30s
+    public-paths:
+      - /api/catalog/**
+      - /actuator/health
+      - /actuator/health/**
+    role-rules:
+      - path: /api/reports/**
+        role: analyst
+  routes:
+    reports-timeout: 5s
+    get-retries: 2
+
+bff:
+  timeouts:
+    profile: 1s
+    orders: 1s
+    recommendations: 300ms
+    catalog: 500ms
+  enrichment-concurrency: 4
+  batch-size: 50
 
 management:
   endpoints:
     web:
       exposure:
-        include: health,gateway
+        include: health
